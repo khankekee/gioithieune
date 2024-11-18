@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Lưu vào Firebase Realtime Database
-        const databaseRef = firebase.database().ref("user_responses"); // Tham chiếu đến node 'user_responses'
+        const databaseRef = firebase.database().ref("user_responses"); 
         databaseRef.push(userData)
             .then(() => {
                 alert("Dữ liệu đã được lưu thành công!");
