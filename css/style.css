@@ -1,4 +1,4 @@
-/* Đặt màu nền và kiểu chữ cho toàn trang */
+
 body {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     overflow: hidden;
 }
 
-/* Container chính */
+
 .main-container {
     display: flex;
     border-radius: 20px;
@@ -19,7 +19,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Khung ghi chú bên trái */
+
 .note-container {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -51,7 +51,7 @@ body {
     transform: translateY(-5px);
 }
 
-/* Định dạng văn bản trong khung note */
+
 .small-text {
     font-size: 16px;
     margin: 0;
@@ -72,7 +72,7 @@ body {
     color: #555;
 }
 
-/* Phần người dùng có thể chỉnh sửa */
+
 .editable {
     width: 100%;
     height: 100%;
@@ -85,7 +85,7 @@ body {
     overflow-y: auto;
 }
 
-/* Nút tùy chỉnh */
+
 .custom-button {
     background-color: #FF9398;
     color: #fff;
@@ -102,7 +102,7 @@ body {
     background-color: #e88388;
 }
 
-/* Khung ảnh bên phải */
+
 .image-container {
     display: flex;
     align-items: center;
@@ -119,7 +119,7 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive cho màn hình nhỏ */
+
 @media (max-width: 768px) {
     .main-container {
         flex-direction: column;
