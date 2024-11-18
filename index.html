@@ -24,7 +24,25 @@
             }
         </style>
     </head>
-    
+ <script src="https://www.gstatic.com/firebasejs/9.18.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.18.1/firebase-database.js"></script>
+<script>
+    // Cấu hình Firebase
+    const firebaseConfig = {
+  apiKey: "AIzaSyD6EHqFQzP0MCptqhErNA6vw8rgrRikRzg",
+  authDomain: "khenhdeptrai-23dbb.firebaseapp.com",
+  projectId: "khenhdeptrai-23dbb",
+  storageBucket: "khenhdeptrai-23dbb.firebasestorage.app",
+  messagingSenderId: "541773518873",
+  appId: "1:541773518873:web:536ff1ff727f585b7b7288",
+  measurementId: "G-QZJGM7QMLM"
+};
+
+    // Khởi tạo Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database(app);
+</script>
+   
 <body>
     <div class="main-container">
     
