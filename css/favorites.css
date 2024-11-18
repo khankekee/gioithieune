@@ -1,4 +1,4 @@
-/* Cài đặt cho trang sở thích */
+
 body {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     color: white;
 }
 
-/* Container cho các sở thích */
+
 .main-container {
     display: flex;
     justify-content: space-between;
@@ -34,7 +34,7 @@ body {
     border-radius: 20px;
 }
 
-/* Khung câu hỏi */
+
 .questions-container {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 30px;
@@ -46,7 +46,7 @@ body {
     border-radius: 20px;
 }
 
-/* Khung ghi chú sở thích */
+
 .favorites-note {
     background-color: #fff;
     border-radius: 20px;
@@ -68,7 +68,7 @@ body {
     text-align: center;
 }
 
-/* Định dạng văn bản trong khung sở thích */
+
 .favorites-note p,
 .questions-note p {
     font-size: 22px;
@@ -77,7 +77,7 @@ body {
     line-height: 1.5;
 }
 
-/* Tạo các ô checkbox */
+
 .options {
     display: flex;
     justify-content: center;
@@ -93,12 +93,12 @@ body {
     font-size: 18px;
 }
 
-/* Ẩn checkbox thật, chỉ hiển thị custom checkmark */
+
 .question-radio {
     display: none;
 }
 
-/* Tạo custom checkmark */
+
 .checkmark {
     width: 20px;
     height: 20px;
@@ -109,7 +109,7 @@ body {
     transition: all 0.2s ease;
 }
 
-/* Khi checkbox được chọn */
+
 .question-radio:checked + .checkmark {
     background-color: #4caf50;
     border-color: #4caf50;
@@ -124,7 +124,7 @@ body {
     color: white;
 }
 
-/* Khi checkbox bị bỏ chọn */
+
 .question-radio:not(:checked) + .checkmark::after {
     content: "✘";
     position: absolute;
@@ -134,7 +134,7 @@ body {
     color: #f44336;
 }
 
-/* Định dạng cho ô nhập vào */
+
 textarea {
     width: 80%;
     padding: 10px;
@@ -162,7 +162,7 @@ textarea {
     background-color: #e88388;
 }
 
-/* Thông báo */
+
 .response-message {
     font-size: 20px;
     margin-top: 15px;
