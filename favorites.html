@@ -8,10 +8,10 @@
 </head>
 <body>
     <div class="main-container">
-        <!-- Khung bên trái để ghi chú sở thích -->
+       
         <div class="favorites-container">
             <div class="favorites-note">
-                <!-- Dòng nhỏ chào người dùng -->
+               
                 <p class="small-text" id="greeting">Chào bạn</p>
                 <p class="large-text">Tớ thích các ngành điện tử</p>
                 <p class="sub-text">Tớ thích nghịch ngợm về máy tính</p>
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <!-- Khung bên phải cho câu hỏi -->
+      
         <div class="questions-container">
             <div class="questions-note">
                 <p>Cậu có thích chơi game không?</p>
@@ -51,17 +51,17 @@
                 </div>
 
                 <p>Vậy theo cậu cái gì thú vị?</p>
-                <!-- Dòng nhập vào để người dùng trả lời câu hỏi -->
+               
                 <textarea id="interestingInput" placeholder="Hãy chia sẻ điều gì thú vị với tớ..." rows="4"></textarea>
 
-                <!-- Nút gửi câu trả lời -->
+              
                 <button id="sendButton" class="custom-button">Gửi</button>
-                <p id="responseMessage" class="response-message"></p> <!-- Thông báo sẽ hiện ở đây -->
+                <p id="responseMessage" class="response-message"></p> 
             </div>
         </div>
     </div>
 
-    <!-- Nút quay lại trang đầu -->
+
     <div class="back-button-container">
         <a href="index.html">
             <button class="custom-button">Quay lại trang đầu</button>
@@ -73,12 +73,12 @@
             const userName = localStorage.getItem('userName');
             const greetingElement = document.getElementById('greeting');
 
-            // Hiển thị tên người dùng
+        
             if (userName) {
                 greetingElement.textContent = `Chào ${userName}`;
             }
 
-            // Xử lý khi người dùng nhấn nút "Gửi"
+         
             const sendButton = document.getElementById('sendButton');
             const interestingInput = document.getElementById('interestingInput');
             const responseMessage = document.getElementById('responseMessage');
@@ -86,13 +86,13 @@
             sendButton.addEventListener('click', () => {
                 const response = interestingInput.value.trim();
 
-                // Kiểm tra nếu có nhập câu trả lời
+          
                 if (response) {
                     responseMessage.textContent = "Nghe đáng yêu thế";
-                    responseMessage.style.color = "#FF9398"; // Thay đổi màu thông báo
+                    responseMessage.style.color = "#FF9398";
                 } else {
                     responseMessage.textContent = "Vui lòng nhập câu trả lời!";
-                    responseMessage.style.color = "#FF6F61"; // Màu đỏ cho cảnh báo
+                    responseMessage.style.color = "#FF6F61"; 
                 }
             });
         });
