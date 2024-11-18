@@ -6,7 +6,7 @@
         <title>Love Notes with Image</title>
         <link rel="stylesheet" href="css/style.css">
         <style>
-            /* CSS cho khung nhập tên */
+
             #userName {
                 width: 100%;
                 padding: 15px;
@@ -27,20 +27,20 @@
     
 <body>
     <div class="main-container">
-        <!-- Khung bên trái để ghi chú -->
+    
         <div class="note-container">
             <div class="note">
                 <p class="small-text">tớ tên là</p>
                 <p class="large-text">Phú Khanh</p>
                 <p class="sub-text">còn cậu</p>
-                <!-- Dòng nhập tên với placeholder -->
+           
                 <input type="text" id="userName" placeholder="Click to write your name..." />
-                <!-- Nút nhấn với màu FF9398 -->
+             
                 <button class="custom-button" id="saveButton">Sở thích</button>
             </div>
         </div>
 
-        <!-- Khung bên phải để hiển thị ảnh -->
+  
         <div class="image-container">
             <img src="images/changtraisaucay.jpg" alt="Forest Image">
         </div>
@@ -51,13 +51,13 @@
             const userNameInput = document.getElementById('userName');
             const saveButton = document.getElementById('saveButton');
 
-            // Lưu tên người dùng vào localStorage khi bấm nút "Sở thích"
+          
             saveButton.addEventListener('click', () => {
                 const userName = userNameInput.value.trim();
-                // Kiểm tra xem người dùng có nhập tên chưa và không phải dòng mặc định
+             
                 if (userName && userName !== "Click to write your name...") {
                     localStorage.setItem('userName', userName);
-                    window.location.href = 'favorites.html'; // Chuyển sang trang sở thích
+                    window.location.href = 'favorites.html'; 
                 } else {
                     alert('Vui lòng nhập tên!');
                 }
