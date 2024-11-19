@@ -7,63 +7,60 @@
     <link rel="stylesheet" href="css/favorites.css">
 </head>
 <body>
-    <div class="main-container">
-       
-        <div class="favorites-container">
-            <div class="favorites-note">
-               
-                <p class="small-text" id="greeting">Chào bạn</p>
-                <p class="large-text">Tớ thích các ngành điện tử</p>
-                <p class="sub-text">Tớ thích nghịch ngợm về máy tính</p>
-                <p class="sub-text">Tớ thích chơi game như LOL, Valorant,...</p>
-            </div>
-        </div>
-
-      
-        <div class="questions-container">
-            <div class="questions-note">
-                <p>Cậu có thích chơi game không?</p>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="game" id="yesGame" class="question-radio">
-                        Có
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="game" id="noGame" class="question-radio">
-                        Không
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-                <p>Cậu có đam mê một bộ môn thể thao như tập gym, cầu lông...?</p>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="sports" id="yesSports" class="question-radio">
-                        Có
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="sports" id="noSports" class="question-radio">
-                        Không
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-                <form id="myForm">
-    <p>Vậy theo cậu cái gì thú vị?</p>
-    <textarea id="interestingInput" placeholder="Hãy chia sẻ điều gì thú vị với tớ..." rows="4"></textarea>
-    <button type="submit" class="custom-button">Gửi</button>
-</form>
-
-
-              
-            
-                <p id="responseMessage" class="response-message"></p> 
-            </div>
+    <div class="favorites-container">
+        <div class="favorites-note">
+            <!-- Phần hiển thị chào hỏi tên người dùng -->
+            <p class="small-text" id="greeting">Chào bạn</p>
+            <p class="large-text">Tớ thích các ngành điện tử</p>
+            <p class="sub-text">Tớ thích nghịch ngợm về máy tính</p>
+            <p class="sub-text">Tớ thích chơi game như LOL, Valorant,...</p>
+    
+            <p>Chia sẻ thêm điều gì thú vị mà bạn muốn nói với tớ:</p>
+            <textarea id="additionalInput" placeholder="Nhập ý tưởng của bạn..." rows="4"></textarea>
+            <p id="responseMessage" class="response-message"></p> <!-- Vị trí hiển thị thông điệp -->
+            <!-- Phần để hiển thị thông điệp "TỚ BIẾT MÀ" -->
+            <p id="finalMessage" class="response-message" style="display: none; font-size: 24px; font-weight: bold;">TỚ BIẾT MÀ</p>
         </div>
     </div>
 
+    <div class="questions-container">
+        <div class="questions-note">
+            <!-- Các câu hỏi của phần questions-container giữ nguyên -->
+            <p>Cậu có thích chơi game không?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="game" id="yesGame" class="question-radio">
+                    Có
+                    <span class="checkmark"></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="game" id="noGame" class="question-radio">
+                    Không
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <p>Cậu có đam mê một bộ môn thể thao như tập gym, cầu lông...?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="sports" id="yesSports" class="question-radio">
+                    Có
+                    <span class="checkmark"></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="sports" id="noSports" class="question-radio">
+                    Không
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <p>Vậy theo cậu cái gì thú vị?</p>
+            <textarea id="interestingInput" placeholder="Hãy chia sẻ điều gì thú vị với tớ..." rows="4"></textarea>
+
+            <button id="sendButton" class="custom-button">Gửi</button>
+            <p id="responseMessage" class="response-message"></p> 
+        </div>
+    </div>
 
     <div class="back-button-container">
         <a href="index.html">
@@ -76,26 +73,31 @@
             const userName = localStorage.getItem('userName');
             const greetingElement = document.getElementById('greeting');
 
-        
+            // Hiển thị tên người dùng nếu có trong localStorage
             if (userName) {
                 greetingElement.textContent = `Chào ${userName}`;
             }
 
-         
-            const sendButton = document.getElementById('sendButton');
-            const interestingInput = document.getElementById('interestingInput');
-            const responseMessage = document.getElementById('responseMessage');
+            // Đoạn văn bản cần hiển thị
+            const fullText = "Còn thiếu dòng 'tớ là người đẹp trai nhất' ở phần giới thiệu kìa";
 
-            sendButton.addEventListener('click', () => {
-                const response = interestingInput.value.trim();
-
-          
-                if (response) {
-                    responseMessage.textContent = "Nghe đáng yêu thế";
-                    responseMessage.style.color = "#FF9398";
+            // Lắng nghe sự kiện nhập liệu của người dùng
+            const additionalInput = document.getElementById('additionalInput');
+            const finalMessage = document.getElementById('finalMessage');
+            
+            additionalInput.addEventListener('input', () => {
+                let currentText = additionalInput.value;
+                
+                // Nếu người dùng bắt đầu gõ, hệ thống sẽ thay thế chữ đã gõ dần dần
+                if (currentText.length < fullText.length) {
+                    // Chạy hiệu ứng gõ chữ tự động
+                    let typedText = fullText.slice(0, currentText.length + 1);
+                    additionalInput.value = typedText;
                 } else {
-                    responseMessage.textContent = "Vui lòng nhập câu trả lời!";
-                    responseMessage.style.color = "#FF6F61"; 
+                    // Nếu người dùng đã gõ đủ, không làm gì thêm
+                    additionalInput.value = fullText;
+                    // Hiển thị dòng "TỚ BIẾT MÀ" sau khi nhập xong
+                    finalMessage.style.display = 'block';  // Hiển thị thông điệp "TỚ BIẾT MÀ"
                 }
             });
         });
