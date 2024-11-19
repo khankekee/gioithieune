@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>iu cậu</title>
-        <link rel="stylesheet" href="css/style.css">
-        <style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Notes with Image</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS cho khung nhập tên */
+        #userName {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 18px;
+            border: 2px solid #FF9398;
+            border-radius: 10px;
+            outline: none;
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+        }
 
-            #userName {
-                width: 100%;
-                padding: 15px;
-                margin-top: 10px;
-                font-size: 18px;
-                border: 2px solid #FF9398;
-                border-radius: 10px;
-                outline: none;
-                background-color: #fff;
-                transition: border-color 0.3s ease;
-            }
-    
-            #userName:focus {
-                border-color: #e88388;
-            }
-        </style>
-    </head>
- <script src="https://www.gstatic.com/firebasejs/9.18.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.18.1/firebase-database.js"></script>
-<script src="app.js"></script> 
+        #userName:focus {
+            border-color: #e88388;
+        }
+    </style>
+</head>
 <body>
     <div class="main-container">
-    
         <div class="note-container">
             <div class="note">
                 <p class="small-text">tớ tên là</p>
                 <p class="large-text">Phú Khanh</p>
                 <p class="sub-text">còn cậu</p>
-           
+                
                 <input type="text" id="userName" placeholder="Click to write your name..." />
-             
+                
                 <button class="custom-button" id="saveButton">Sở thích</button>
             </div>
         </div>
 
-  
         <div class="image-container">
             <img src="images/changtraisaucay.jpg" alt="Forest Image">
         </div>
@@ -53,13 +48,12 @@
             const userNameInput = document.getElementById('userName');
             const saveButton = document.getElementById('saveButton');
 
-          
             saveButton.addEventListener('click', () => {
                 const userName = userNameInput.value.trim();
-             
+                // Kiểm tra xem người dùng có nhập tên chưa và không phải dòng mặc định
                 if (userName && userName !== "Click to write your name...") {
-                    localStorage.setItem('userName', userName);
-                    window.location.href = 'favorites.html'; 
+                    localStorage.setItem('userName', userName);  // Lưu tên vào localStorage
+                    window.location.href = 'favorites.html';  // Chuyển sang trang sở thích
                 } else {
                     alert('Vui lòng nhập tên!');
                 }
